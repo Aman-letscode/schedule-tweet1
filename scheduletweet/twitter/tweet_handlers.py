@@ -28,11 +28,15 @@ def send_tweets(consumer_key, consumer_secret, access_token,
 def tweet_scheduler():
     if (os.environ.get('CONSUMER_KEY') or os.environ.get('CONSUMER_SECRET') or
        os.environ.get('ACCESS_TOKEN') or os.environ.get('TOKEN_SECRET')):
-        consumer_key = os.environ.get('CONSUMER_KEY')
-        consumer_secret = os.environ.get('CONSUMER_SECRET')
-        access_token = os.environ.get('ACCESS_TOKEN')
-        access_token_secret = os.environ.get('TOKEN_SECRET')
-        send_tweets(
+       consumer_key = os.environ.get('CONSUMER_KEY')
+       consumer_secret = os.environ.get('CONSUMER_SECRET')
+       access_token = os.environ.get('ACCESS_TOKEN')
+       access_token_secret = os.environ.get('TOKEN_SECRET')
+    # consumer_key = "PQp4uTiZzHNBl27j4feQlKu1G"
+    # consumer_secret = "Ah3DQpkVECHYXZuWJueBObMj28Lj0d8l8dzQZhjllrc3NdTDe7"
+    # access_token = "1575323375752204288-LlbA01JYD1hDp6rbwUIDgwaswrht8D"
+    # access_token_secret = "E5NwuSaivzlhoHL9hsCYmGcuUHC4nsw476LB9Jk850rSz"
+       send_tweets(
             consumer_key, consumer_secret, access_token, access_token_secret)
     else:
         raise NotImplementedError('Set environment variables correctly')
