@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # schedule-tweet
 Django based scheduler of tweets
 
@@ -61,3 +62,6 @@ python manage.py runserver
 ### Open the admin window and schedule a tweet after sometime
 
 Visit [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) to login with `superuuser` creds and [twitterschedulermodel](http://127.0.0.1:8000/admin/twitter/twitterschedulermodel/) to create a new scheduled tweet.
+=======
+# schedule-tweet1
+>>>>>>> 25c844866e10691b680635dbd3f56e12696220ae
