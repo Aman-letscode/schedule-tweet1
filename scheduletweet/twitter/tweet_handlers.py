@@ -8,8 +8,7 @@ from twitter.models import TwitterSchedulerModel
 logger = logging.getLogger(__name__)
 
 
-def send_tweets(consumer_key, consumer_secret, access_token,
-                access_token_secret):
+def send_tweets(consumer_key, consumer_secret, access_token,access_token_secret):
     expired_tweets = TwitterSchedulerModel.objects.filter(
         sent=False, tweet_at__lte=arrow.utcnow().datetime)
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -26,17 +25,14 @@ def send_tweets(consumer_key, consumer_secret, access_token,
 
 
 def tweet_scheduler():
-    if (os.environ.get('CONSUMER_KEY') or os.environ.get('CONSUMER_SECRET') or
-       os.environ.get('ACCESS_TOKEN') or os.environ.get('TOKEN_SECRET')):
-       consumer_key = os.environ.get('CONSUMER_KEY')
-       consumer_secret = os.environ.get('CONSUMER_SECRET')
-       access_token = os.environ.get('ACCESS_TOKEN')
-       access_token_secret = os.environ.get('TOKEN_SECRET')
-    # consumer_key = "PQp4uTiZzHNBl27j4feQlKu1G"
-    # consumer_secret = "Ah3DQpkVECHYXZuWJueBObMj28Lj0d8l8dzQZhjllrc3NdTDe7"
-    # access_token = "1575323375752204288-LlbA01JYD1hDp6rbwUIDgwaswrht8D"
-    # access_token_secret = "E5NwuSaivzlhoHL9hsCYmGcuUHC4nsw476LB9Jk850rSz"
-       send_tweets(
-            consumer_key, consumer_secret, access_token, access_token_secret)
-    else:
-        raise NotImplementedError('Set environment variables correctly')
+    consumer_key = "JeWxj1otXrhTHuZf3hqkc7mC6"
+    consumer_secret = "zcCzzVl837T0mYx0CrsXHiHLR0wwX4zl0RpMFXrIUbzvs6kQRV"
+    access_token = "1576480519822327810-gA2CExhfaiAMCBaunOZfeAc6lk2e4a"
+    access_token_secret = "wZyTIxkg93ZCJRHClTgmLcUjWRo6rRI7vD6q8StJnkDFa"
+    send_tweets(consumer_key, consumer_secret, access_token, access_token_secret)
+    
+
+
+#client Id = SENnNWxjUGVodkx2X0ZzdjBsNWM6MTpjaQ
+#client secret = GpIWrV9E6-7eSAUlsUnFzbTc7bqWMMLaY6pKa4yloUElkjzrf2
+#client secret (auth) = GpIWrV9E6-7eSAUlsUnFzbTc7bqWMMLaY6pKa4yloUElkjzrf2
